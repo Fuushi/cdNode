@@ -2,12 +2,13 @@
 <html>
 
 <head>
-    <title>Hello World</title>
+    <title>CND.kindling</title>
 </head>
 
 <body>
 
-<h1>Hello, World!</h1>
+<h1>Welcome to Kindling CDN landing!</h1>
+<p>Under Construction</p>
 
 </body>
 
