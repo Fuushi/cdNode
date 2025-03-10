@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Mode Website</title>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    body {
+        background-color: #121212;
+        color: #E0E0E0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 20px;
+        background-color: #1E1E1E;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #BB86FC;
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    a {
+        color: #03DAC6;
+        text-decoration: none;
+        border-bottom: 1px dashed #03DAC6;
+    }
+
+    a:hover {
+        color: #BB86FC;
+        border-bottom-color: #BB86FC;
+    }
+
+    button {
+        background-color: #03DAC6;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        color: #121212;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #BB86FC;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Kindling CDN</h1>
+    <p>The open source Content Delivery Network powering Kindling 
+       Upload a file (indev), and all requests will come from the closest node</p>
+    <p>Feel free to <a href="#">upload to your hearts content</a> (do not upload anything that could get us in trouble)</p>
+    <button>Learn More</button>
+</div>
+
+</body>
+</html>
