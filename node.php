@@ -16,3 +16,5 @@ if (file_exists($path)) {
     header("HTTP/1.0 404 Not Found");
     echo "Image not found.";
 }
+
+?>

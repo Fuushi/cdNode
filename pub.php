@@ -16,8 +16,9 @@ $id = $_GET['id'];
 //select node
 $src = $nodes[0];
 
-//below return html class for the requested image
+//below return redirect to the image
+header("Location: http://".$src."/node.php?id=".$id);
 ?>
 
 
-<img src="http://<?php echo $src ?>/node.php?id=<?php echo $id ?>" alt="">
+
