@@ -13,8 +13,11 @@ $config = json_decode($config, true);
 $nodes = $config['nodes'];
 $protocol = $config['protocol'];
 
-//extract requested file
-$id = $_GET['id'];
+$id = htmlspecialchars($_GET['id']);
+if (!$id || !preg_match('/^[a-zA-Z0-9_\-\.]+$/', $id)) {
+    http_response_code(400);
+    exit('Invalid ID');
+}
 
 //select node
 $src = $nodes[0];
