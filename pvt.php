@@ -1,1 +1,0 @@
-//private requests must be authenticated before and after routing @ all data MUST be encrypted
