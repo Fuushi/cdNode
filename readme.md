@@ -1,6 +1,7 @@
-# Under Construction
+# cdNode open source CDN
 
-## cdNode CDN
+![This is an alt text.](http://cdn.kindling.me/pub.php?id=00000002.jpeg "This is a sample image.")
+Above image served by production cdn
 
 ### Overview
 This is a lightweight Content Delivery Network (CDN) designed to efficiently serve static assets such as images, JavaScript, CSS, and other files to users. The goal is to improve load times and reduce server strain by distributing content across multiple locations.
