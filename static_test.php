@@ -1,3 +1,11 @@
+<?php 
+//load config
+$config = file_get_contents("./config.json");
+$config = json_decode($config, true);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +15,7 @@
 </head>
 <body>
     <p>Test</p>
-    <img src="http://172.16.1.91:3000/pub.php?id=00000001.jpeg" alt="Image">
+    <img src="http://<?php echo $config['local_addr']?>/pub.php?id=00000001.jpeg" alt="Image">
 
 </body>
 </html>
