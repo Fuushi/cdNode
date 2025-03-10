@@ -13,3 +13,5 @@
 </body>
 
 </html>
+
+<?php //node might get moved to index, or maybe even just redirected when $id?>
