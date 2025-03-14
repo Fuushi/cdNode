@@ -15,12 +15,27 @@ if (!$realPath || strpos($realPath, realpath('./public/')) !== 0) {
     exit('Image not found.');
 }
 
+// Determine the content type based on the file extension
+$extension = pathinfo($path, PATHINFO_EXTENSION);
+$contentTypes = [
+    'jpg' => 'image/jpeg',
+    'jpeg' => 'image/jpeg',
+    'png' => 'image/png',
+    'gif' => 'image/gif',
+    'webp' => 'image/webp'
+];
+
+$contentType = $contentTypes[$extension] ?? 'application/octet-stream';
 
 // Check if the file exists and is a valid image
 if (file_exists($path)) {
     // Set the appropriate content-type header
-    header("Content-Type: image/jpeg"); //TODO this needs to be dynamic
+    header("Content-Type: " . $contentType);
     header("Content-Length: " . filesize($path));
+
+    // Add security headers
+    header("X-Content-Type-Options: nosniff");
+    header("X-Frame-Options: DENY");
 
     // Output the image data directly
     readfile($path);
