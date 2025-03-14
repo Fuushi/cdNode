@@ -11,11 +11,15 @@
 $path = "./public/";
 $files = scandir($path);
 
+//remove invalid files
+$exclude = array(".", "..", "...", "../");
+$files = array_diff($files, $exclude);
+
+//reindex array
+$files = array_values($files);
+
 //dump files into a json array
 $data = json_encode($files);
-
-//remove invalid files
-//... TODO 
 
 //return json data
 echo $data;
