@@ -1,9 +1,26 @@
 <?php
 //Public requests are just routed, no auth required
 
-//NO html
-//return an image class containing the url, echo on client
+//include
+require 'auth.php';
 
+//returns redirect to the image on the selected node
+
+//define functions
+function selectNode($addr, $nodes) {
+    //get region
+    $region = getIpLocation($addr);
+
+    //search nodes for region match TODO make load balance between all nodes in region
+    foreach ($nodes as $node_addr => $node_region) {
+        if ($node_region == $region) {
+            return $node_addr;
+        }
+    }
+
+    //if no match, return random node for load balancing
+    return array_rand($nodes);
+}
 
 //load config
 $config = file_get_contents("./config.json");
@@ -32,7 +49,8 @@ if (!$id || !preg_match('/^[a-zA-Z0-9_\-\.]+$/', $id)) {
 }
 
 //select node (random for now, will use geoip later)
-$src = $nodes[array_rand($nodes)];
+
+$src = selectNode($_SERVER['REMOTE_ADDR'], $nodes);
 
 //below return redirect to the image
 header("Location: ".$protocol."://".$src."/node.php?id=".$id);

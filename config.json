@@ -2,7 +2,8 @@
     "debug" : true,
     "local_addr" : "172.16.1.91:3000",
     "protocol" : "http",
-    "nodes" : [
-        "172.16.1.91:3000"
-    ]
+    "nodes" : {
+        "172.16.1.91:3000" : "ZZ"
+    },
+    "upload_whitelist" : []
 }

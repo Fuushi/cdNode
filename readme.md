@@ -66,3 +66,8 @@ rm index.html origin.php pub.php static_test.php
 📚 Additional Information
 Ensure that config.json is correctly set up with your domain and node information.
 For security and performance, consider enabling HTTPS and adjusting caching policies.
+
+credits
+geolocation data by dbip https://db-ip.com
+(production table heavily compressed to fit in ram)
+compressor script will be public in a future commit
