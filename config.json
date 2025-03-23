@@ -1,5 +1,6 @@
 {
     "debug" : true,
+    "use_geoip" : true,
     "local_addr" : "172.16.1.91:3000",
     "protocol" : "http",
     "nodes" : {

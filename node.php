@@ -1,6 +1,13 @@
 <?php
 //NODE serves files
-$id = htmlspecialchars($_GET['id']);
+$id = htmlspecialchars($_GET['id'] ?? "");
+
+//validate id
+if ($id === "") {
+    http_response_code(400);
+    exit('ID is required');
+}
+
 if (!$id || !preg_match('/^[a-zA-Z0-9_\-\.]+$/', $id)) {
     http_response_code(400);
     exit('Invalid ID');
@@ -24,6 +31,9 @@ $contentTypes = [
     'gif' => 'image/gif',
     'webp' => 'image/webp'
 ];
+
+//convert extension to lowercase
+$extension = strtolower($extension);
 
 $contentType = $contentTypes[$extension] ?? 'application/octet-stream';
 

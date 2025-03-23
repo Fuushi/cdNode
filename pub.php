@@ -48,9 +48,12 @@ if (!$id || !preg_match('/^[a-zA-Z0-9_\-\.]+$/', $id)) {
     }
 }
 
-//select node (random for now, will use geoip later)
-
-$src = selectNode($_SERVER['REMOTE_ADDR'], $nodes);
+//select node
+if ($config['use_geoip']) {
+    $src = selectNode($_SERVER['REMOTE_ADDR'], $nodes);
+} else {
+    $src = array_rand($nodes);
+}
 
 //below return redirect to the image
 header("Location: ".$protocol."://".$src."/node.php?id=".$id);
